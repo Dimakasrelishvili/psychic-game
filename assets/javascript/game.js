@@ -1,22 +1,21 @@
-var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 	var wins = 0;
 	var losses = 0;
 	var guessesLeft = 10;
 	var wrongGuesses = [];
-
-	console.log(computerChoices);
-
-
+	var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+	
+	
+	
 	document.onkeyup = function(event) {
-
-		console.log(event);
+		
 		//determines which key was pressed.
 		var userGuess = event.key;
 		// randomly chooses a choice from the options array. This is the Computer's guess.
 		function computerGuess(computerChoices) {
 			 return computerChoices[Math.floor(Math.random() * computerChoices.length)];
 		}
+		console.log(computerGuess(computerChoices))
 
 		//Pushes userGuess to wongGuesses array.
 		var addGuess = function() {
@@ -29,11 +28,11 @@ var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l
 		var resetGame = function() {
 				guessesLeft = 10;
 				wrongGuesses = [];
-				computerGuess();
+				computerGuess(computerChoices);
 		};
 
 		//Determines winning and losing and what happens
-		if (userGuess === computerGuess) {
+		if (userGuess === computerGuess(computerChoices)) {
 			alert("You got it! You're out of this world!")
 			wins++;
 			resetGame(); 

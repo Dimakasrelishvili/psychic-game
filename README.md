@@ -1,1 +1,2 @@
 # psychic-game
+this is psychic-game when the computer grabs the value (letter) of key user presses and compares to its randomly chosen letter if they are same user wins, user has 10 try to guess the letter 
